@@ -1,5 +1,3 @@
-# organization-convention
-
 # GPG GitHub 설정 가이드
 
 이 레포지토리는 GPG(GNU Privacy Guard)를 설치하고 설정하여 GitHub 커밋에 서명하는 방법을 안내합니다.
@@ -72,7 +70,7 @@ gpg --full-generate-key
    - 보안을 위해 2년 만료 기간을 설정하는 것이 좋습니다.
 
 5. 이름, 이메일 주소 및 선택적으로 코멘트를 입력합니다.
-   - 이메일 주소는 GitHub 계정에 등록된 이메일과 일치해야 합니다.
+   - **이메일 주소는 GitHub 계정에 등록된 이메일과 일치해야 합니다.**
 
 6. 본인이 사용할 암호를 입력하세요.
 
@@ -82,6 +80,8 @@ gpg --full-generate-key
 <br>
 
 ## GPG 키 GitHub 계정에 추가
+<br>
+
 
 1. GPG 키 ID를 확인합니다:
 
@@ -89,9 +89,7 @@ gpg --full-generate-key
 gpg --list-secret-keys --keyid-format=long
 ```
 
-<img width="578" alt="image" src="https://github.com/user-attachments/assets/d30f6296-4769-45e9-adb0-6b8446163bcb" />
-
-<br><br>
+<img width="578" alt="image" src="https://github.com/user-attachments/assets/d30f6296-4769-45e9-adb0-6b8446163bcb" /> <br>
 
 2. GPG 공개 키를 내보냅니다:
 
@@ -99,12 +97,11 @@ gpg --list-secret-keys --keyid-format=long
 gpg --armor --export <KEY ID>
 ```
 
+<br>
+
 3. 전체 GPG 키 출력(BEGIN PGP PUBLIC KEY BLOCK부터 END PGP PUBLIC KEY BLOCK까지)을 복사합니다.
 
-<img width="629" alt="image" src="https://github.com/user-attachments/assets/b5dcdb16-dd75-4d55-b170-4bc5875a2312" />
-
-<br><br>
-
+<img width="629" alt="image" src="https://github.com/user-attachments/assets/b5dcdb16-dd75-4d55-b170-4bc5875a2312" /> <br>
 
 4. GitHub 계정에 GPG 키를 추가합니다:
    - GitHub에 로그인합니다.
@@ -164,6 +161,11 @@ git commit -S -m "Your commit message"
 ```bash
 git log --show-signature
 ```
+
+## 결과
+- GitHub commit에서 verified 확인하면 됩니다.
+![image](https://github.com/user-attachments/assets/3c7ca761-ccea-408a-8f03-2b71212ef6f5)
+
 
 ## 추가 자료
 
